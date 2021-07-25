@@ -1,6 +1,6 @@
 <!doctype html>
 {% load static %}
-<html lang="en">
+<html lang="en" class="no-js">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -10,16 +10,29 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>DIGIT SQUAD SHOWCASE</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+	
+	
+	<script src="https://github.com/Modernizr/Modernizr/raw/master/modernizr.js"></script>
+	<script>
+		// Wait for window load
+		$(window).load(function() {
+			// Animate loader off screen
+			$("#loader").animate({
+				top: -200
+			}, 1500);
+		});
+	</script>
   </head>
-  <body>
+  <body id="loader">
   <link rel='stylesheet'  href="{% static 'CSS\master.css' %}">
   <!--NAV BAR--       <nav class="navbar navbar-dark bg-dark">     -->
 <nav class="navbar fixed-top navbar-dark bg-light">
   <nav class="navbar fixed-top navbar-expand-lg navbar-warning bg-light">
-<div style="width: 200px;">
+<div >
       <img style="width:200px ;" src="{% static 'images/logo.png' %}" class="img" alt="not found">
       <button class="navbar-toggler" style="color: #000000" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation"><span class="material-icons">menu</span>
-    <span class="navbar-toggler-icon"></span>
+  
   </button>
   </div>
   <div class="collapse navbar-collapse" id="navbarText">
@@ -190,6 +203,9 @@
      padding :00px;
     
    }
+
+   .no-js #loader { display: none;  }
+		.js #loader { display: block; position: absolute; left: 100px; top: 0; }
    .container{
      padding-top: 10%;
     padding-right: 0%;
@@ -298,6 +314,10 @@
      margin-left: 8%;
      transition: transform .2s;
    }
+}
+
+#navbarText{
+font-size:16px;
 }
 </style>
 

@@ -17,10 +17,15 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>DIGIT SQUAD</title>
+      <link rel='stylesheet'  href="{% static 'CSS\master.css' %}">
   </head>
+  <div class='spinner-wrapper'>
+    <div class="spinner"></div>
+</div>
   <body>
-  <link rel='stylesheet'  href="{% static 'CSS\master.css' %}">
-  <!--NAV BAR--       <nav class="navbar navbar-dark bg-dark">     -->
+
+
+
  <nav class="navbar fixed-top navbar-dark bg-light">
   <nav class="navbar fixed-top navbar-expand-lg navbar-warning bg-light">
 <div >
@@ -29,6 +34,8 @@
     
   </button>
   </div>
+
+
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
@@ -221,18 +228,7 @@
 <a style="text-align:center;font-size:100%">The club was formed as a group of premier technology enthusiasts in VIT, who practically live and sense all things technology. Not only to learn how to manufacture and work in the industry of tech but the club would practically want to see people use technology in the best way possible. Getting the most out of technology in the right way is our vision.</a>
 
 
- <!--
-<div class="foot">
-<div class="mail" >
-<p class="font-weight-bold">mail us @<a href="www.gmail.com">www.gmail.com</a></p>
-<p> FOLLOW US ON :</p>
-<a href="https://www.facebook.com/digitsquadvitv/"><i  class="fa fa-facebook " style="font-size:30px;color:#00AAFF"  ></i></a>
-<a href="https://www.instagram.com/digitsquad_vit/"><i class="fa fa-instagram  " style="font-size:30px;color:#EEAAAA" ></i></a>
-<br><br>
-<p id="cop" class="font-weight-bold ">©2021 CREATED AND MANAGED BY :DIGITSQUAD VIT</p>
-</div>
-</div>
--->
+
 
 <nav class="navbar navbar-expand-sm bg-light">
 <nav class="navbar navbar-expand-lg navbar-warning bg-light">
@@ -297,7 +293,7 @@
   </div>
 </nav>
 </nav>
-
+</body>
 
     
 <style type="text/css">
@@ -875,6 +871,11 @@ font-size:12px;
   padding-left: 50px;
   
 }
+
+.responsive{
+  width:340px;
+  height:380px;
+}
 .grid-containertwo{
   display: inline-grid;
   grid-template-columns: auto ;
@@ -1346,7 +1347,7 @@ font-size:12px;
   font-family:cursive;
 }
 #navbarText{
-font-size:12px;
+font-size:16px;
 }
 
 /*CARD */
@@ -1470,110 +1471,69 @@ font-size:12px;
     color: #AABBCC;
 }
 
-
-/*
-.containers{
-    width: 50%;
-    margin-left:20%;
-    position: relative;
+.spinner-wrapper{
+    width: 100%;
+    height: 100%;
+    background-color: #151515;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
     display: flex;
-    margin-right:20px;
-    padding:20px;
-    justify-contents:space-evenly;
-}
-
-.containers .cardss{
-    position: relative;
-    cursor: pointer;
-}
-
-.containers .cardss .face{
-    width: 300px;
-    height: 200px;
-    transition: 0.5s;
-}
-
-.containers .cardss .face.face1{
-    position: relative;
-    background: #000;
-    border:5px solid red;
-    display: flex;
-    justify-content: center;
     align-items: center;
-    z-index: 1;
-    transform: translateY(100px);
-}
-
-.containers .cardss:hover .face.face1{
-    background: linear-gradient(to right, #ff9900 35%, #FFFFFF 94%);
-    transform: translateY(0);
-}
-
-.containers .cardss .face.face1 .content{
-    opacity: 0.2;
-    transition: 0.5s;
-}
-
-.containers .cardss:hover .face.face1 .content{
-    opacity: 1;
-}
-
-.containers .cardss .face.face1 .content img{
-    max-width: 100px;
-}
-
-.containers .cardss .face.face1 .content h3{
-    margin: 10px 0 0;
-    padding: 0;
-    color: red;
-    text-align: center;
-    font-size: 1.5em;
-}
-
-.containers .cardss .face.face2{
-    position: relative;
-    background: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
-    display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 20px;
-    box-sizing: border-box;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
-    transform: translateY(-100px);
 }
 
-.containers .cardss:hover .face.face2{
-    transform: translateY(0);
+.spinner {
+    position: relative;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
 }
 
-.containers .cardss .face.face2 .content p{
-    margin: 0;
-    padding: 0;
+.spinner::before,
+.spinner:after{
+    content: "";
+    position: absolute;
+    border-radius: 50%;
 }
 
-.containers .cardss .face.face2 .content a{
-    margin: 15px 0 0;
-    display:  inline-block;
-    text-decoration: none;
-    font-weight: 900;
-    color: #333;
-    padding: 5px;
-    border: 1px solid #333;
+.spinner:before {
+    width: 100%;
+    height: 100%;
+    background-image:linear-gradient(90deg, #ff00cc 0%,#333399 100% );
+    animation: spin 2s infinite linear;
+}
+.spinner:after {
+    width: 90%;
+    height: 90%;
+    background-color: #151515;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.containers .cardss .face.face2 .content a:hover{
-    background: #FF7788;
-    color: #AABBCC;
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+
 }
-*/
 </style>
 
+<script>
+let spinnerWrapper = document.querySelector('.spinner-wrapper');
 
+    window.addEventListener('load', function () {
+        spinnerWrapper.style.display = 'none';
+        
+    });
+</script>
 
    <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-  </body>
+  
 </html>

@@ -16,11 +16,11 @@
   <!--NAV BAR--       <nav class="navbar navbar-dark bg-dark">     -->
 <nav class="navbar fixed-top navbar-dark bg-light">
   <nav class="navbar fixed-top navbar-expand-lg navbar-warning bg-light">
-<div style="width: 200px;">
+<div >
       <img style="width:200px ;" src="{% static 'images/logo.png' %}" class="img" alt="not found">
       <button class="navbar-toggler" style="color: #000000" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation"><span class="material-icons">menu</span>
        
-    <span class="navbar-toggler-icon"></span>
+  
   </button>
   </div>
   <div class="collapse navbar-collapse" id="navbarText">
@@ -88,10 +88,16 @@
 <h1 style="text-align:center;color:#FFFFFF"><b>FACULTY CO-ORDINATOR</b></h1>
 <div class="grid-container">
 <div class="card">
-    <img id="image" class="im" src="{% static 'images/STAFF1.jpeg' %}" alt="Card image">
+    <img class="im" src="{% static 'images/STAFF1.jpeg' %}" alt="Card image">
+    <div class="overlay">
+    <div class="text">DR.PRADHEEP.T</div>
+    </div>
   </div>
   <div class="card">
-    <img id="image" class="im" src="{% static 'images/STAFF2.jpeg' %}" alt="Card image">
+    <img class="im" src="{% static 'images/STAFF2.jpeg' %}" alt="Card image">
+    <div class="overlay">
+    <div class="text">DR.SUJATHA.R</div>
+    </div>
   </div>
 </div>
 <!--<div>
@@ -179,6 +185,47 @@
     <!--<button type="submit" name="test" value="4" class="btnm">{{obj4.user}}</button>-->
   </div>
 </div>
+<div class="grid-containers">
+        <div class="card">
+            <img src="{% static 'images/TECHNICAL HEAD.jpeg' %}">
+            <div class="descriptions">
+                <h1>etho oru satti paya</h1>
+                <p>
+                    lol work aguthu da :)
+                </p>
+                <!--<button>
+                    <i class="fab fa-youtube"></i>
+                    Play trailer on YouTube
+                </button>-->
+            </div>
+        </div>
+        <div class="card">
+            <img src="{% static 'images/TECHNICAL HEAD.jpeg' %}">
+            <div class="descriptions">
+                <h1>avane than</h1>
+                <p>
+                    im going to add this a web dev core commitee and other cards :) epdi idea?
+                </p>
+                <!--<button>
+                    <i class="fab fa-youtube"></i>
+                    Play trailer on YouTube
+                </button>-->
+            </div>
+        </div>
+        <div class="card">
+            <img src="{% static 'images/TECHNICAL HEAD.jpeg' %}">
+            <div class="descriptions">
+                <h1>avane than</h1>
+                <p>
+                    ithu card three
+                </p>
+                <!--<button>
+                    <i class="fab fa-youtube"></i>
+                    Play trailer on YouTube
+                </button>-->
+            </div>
+        </div>
+    </div>
 <!--</form>-->
 
 <!--
@@ -257,6 +304,10 @@
     margin-left:100px;
 }
 
+#imaget{
+  margin-left:40%;
+}
+
 .image {
   display: block;
   height:246px;
@@ -325,7 +376,7 @@
     margin-left:30px;
 }
  
-
+/*
  .overlay {
   position: absolute;
   bottom: 0;
@@ -347,7 +398,28 @@
   -ms-transform: scale(1);
   transform: scale(1);
 }
+*/
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background:linear-gradient(to bottom, rgba(255,0,0,0), rgba(255,0,0,1));
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+}
 
+.card:hover .overlay {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
 .im{
      size:100%;
      /*height:380px; itherkku munbu height ithu width vaikala*/
@@ -367,7 +439,112 @@
   transform: translate(-50%, -50%);
   text-align: center;
 }
-
+/*LAST CARDS FOR MEMEBERS*/
+.grid-containers
+{
+  width:100%;
+  display:grid;
+   grid-column-gap:20px;
+   grid-row-gap:20px;
+   /*grid-template-columns:auto;*/
+   margin-bottom:30px;
+  
+  /*width:90%;
+    display:grid;
+    grid-gap:10px 10px;
+    grid-row-gap:10px;
+    grid-column-gap:20px;
+    grid-template-columns: auto;
+    margin-bottom:30px;
+    justify-content: space-between;*/
+}
+.wrapper
+{
+    left:0%;
+    transform: translate(-50%, -50%);
+    width:10%;
+    max-width: 650px;
+    height:auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.qcard{
+    margin-left:0px;
+    width:100%;
+    /*margin-left:50%;*/
+    flex: 1;
+    flex-basis: 300px;
+    flex-grow: 0;
+    height: 440px;
+    background: #fff;
+    border: 2px solid #fff;
+    box-shadow: 0px 4px 7px rgba(0,0,0,.5);
+    cursor: pointer;
+    transition: all .5s cubic-bezier(.8,.5,.2,1.4);
+    overflow: hidden;
+    /*position: relative;*/
+    margin-bottom:70px;
+    /*grid-template-columns: auto;
+    justify-content: space-evenly;*/
+}
+.qcard img{
+    width: 100%;
+    height:100%;
+    transition: all .5s cubic-bezier(.8,.5,.2,1.4);
+}
+.descriptions{
+    position: absolute;
+    top:0px;
+    left:0px;
+    background-color: rgba(255,255,255,.7);
+    width:100%;
+    height:100%;
+    transition: all .7s ease-in-out;
+    padding: 20px;
+    box-sizing: border-box;
+    clip-path: circle(0% at 100% 100%);
+}
+.qcard:hover .descriptions{
+    left:0px;
+    transition: all .7s ease-in-out;
+    clip-path: circle(75%);
+}
+.qcard:hover{
+    transition: all .5s cubic-bezier(.8,.5,.2,1.4);
+    box-shadow: 0px 2px 3px rgba(0,0,0,.3);
+    transform: scale(.97);
+}
+.qcard:hover img{
+    transition: all .5s cubic-bezier(.8,.5,.2,1.4);
+    transform: scale(1.6) rotate(20deg);
+    filter: blur(3px);
+}
+.qcard h1{
+    color: #ff3838;
+    letter-spacing: 1px;
+    margin: 0px;
+}
+.qcard p{
+    line-height: 24px;
+    height: 70%;
+}
+.qcard button{
+    width: fit-content;
+    height: 40px;
+    cursor: pointer;
+    border-style: none;
+    background-color: #ff3838;
+    color:#fff;
+    font-size: 15px;
+    outline: none;
+    box-shadow: 0px 2px 3px rgba(0,0,0,.4);
+    transition: all .5s ease-in-out;
+}
+.qcard button:hover{
+    transform: scale(.95) translateX(-5px);
+    transition: all .5s ease-in-out;
+}
 
  }
 
@@ -391,6 +568,131 @@
     height:246px;
     width:278px;
    } 
+   /*LAST CARDS FOR MEMEBERS*/
+.grid-containers
+{
+  
+  width:100%;
+  display:grid;
+   grid-column-gap:20px;
+    grid-row-gap:20px;
+   /*grid-template-columns:auto;*/
+   margin-bottom:30px;
+  /*justify-content: space-between;*/
+
+   /* width:90%;
+    display:grid;
+    grid-gap:10px 10px;
+    grid-row-gap:10px;
+    grid-column-gap:20px;
+    grid-template-columns: auto;
+    margin-bottom:30px;
+    justify-content: space-between;*/
+}
+.wrapper
+{
+    left:0%;
+    transform: translate(-50%, -50%);
+    width:10%;
+    max-width: 650px;
+    height:auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.qcard{
+    margin-left:0px;
+    width:100%;
+    flex: 1;
+    flex-basis: 300px;
+    flex-grow: 0;
+    height: 440px;
+    background: #fff;
+    border: 2px solid #fff;
+    box-shadow: 0px 4px 7px rgba(0,0,0,.5);
+    cursor: pointer;
+    transition: all .5s cubic-bezier(.8,.5,.2,1.4);
+    overflow: hidden;
+    margin-bottom:70px;
+    /*position: relative;
+    grid-template-columns: auto;
+  justify-content: space-evenly;*/
+  /*
+
+padding-top: 0%;
+    grid-template-columns: auto auto auto auto;
+  justify-content: space-evenly;
+    padding-right: 0%;
+    padding-bottom: 0%;
+    padding-left: 0%;
+    margin-left:15%;
+    margin-right:15%;
+    margin-top:0%;
+    margin-bottom:15%;
+    background-color:#7F7F89;
+    border-radius:4%;
+    height:246px;
+    width:278px;
+
+  */
+}
+.qcard img{
+    width: 100%;
+    height:100%;
+    transition: all .5s cubic-bezier(.8,.5,.2,1.4);
+}
+.descriptions{
+    position: absolute;
+    top:0px;
+    left:0px;
+    background-color: rgba(255,255,255,.7);
+    width:100%;
+    height:100%;
+    transition: all .7s ease-in-out;
+    padding: 20px;
+    box-sizing: border-box;
+    clip-path: circle(0% at 100% 100%);
+}
+.qcard:hover .descriptions{
+    left:0px;
+    transition: all .7s ease-in-out;
+    clip-path: circle(75%);
+}
+.qcard:hover{
+    transition: all .5s cubic-bezier(.8,.5,.2,1.4);
+    box-shadow: 0px 2px 3px rgba(0,0,0,.3);
+    transform: scale(.97);
+}
+.qcard:hover img{
+    transition: all .5s cubic-bezier(.8,.5,.2,1.4);
+    transform: scale(1.6) rotate(20deg);
+    filter: blur(3px);
+}
+.qcard h1{
+    color: #ff3838;
+    letter-spacing: 1px;
+    margin: 0px;
+}
+.qcard p{
+    line-height: 24px;
+    height: 70%;
+}
+.qcard button{
+    width: fit-content;
+    height: 40px;
+    cursor: pointer;
+    border-style: none;
+    background-color: #ff3838;
+    color:#fff;
+    font-size: 15px;
+    outline: none;
+    box-shadow: 0px 2px 3px rgba(0,0,0,.4);
+    transition: all .5s ease-in-out;
+}
+.qcard button:hover{
+    transform: scale(.95) translateX(-5px);
+    transition: all .5s ease-in-out;
+}
    /*
    .cord{
     padding-top: 1%;
@@ -439,8 +741,105 @@
     }
 
  }
+ /*end of 1199 device*/
+#navbarText{
+font-size:16px;
+}
 
-
+/*LAST CARDS FOR MEMEBERS*/
+.grid-containers
+{
+  width:90%;
+  display:grid;
+  grid-column-gap:20px;
+  grid-row-gap:20px;
+  grid-template-columns: auto auto auto;
+  margin-bottom:30px;
+}
+.wrapper
+{
+    left:50%;
+    transform: translate(-50%, -50%);
+    width:10%;
+    max-width: 650px;
+    height:auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.qcard{
+    margin-left:130px;
+    /*margin-left:50%;*/
+    flex: 1;
+    flex-basis: 300px;
+    flex-grow: 0;
+    height: 440px;
+    background: #fff;
+    border: 2px solid #fff;
+    box-shadow: 0px 4px 7px rgba(0,0,0,.5);
+    cursor: pointer;
+    transition: all .5s cubic-bezier(.8,.5,.2,1.4);
+    overflow: hidden;
+    position: relative;
+    margin-bottom:70px;
+}
+.qcard img{
+    width: 100%;
+    height:100%;
+    transition: all .5s cubic-bezier(.8,.5,.2,1.4);
+}
+.descriptions{
+    position: absolute;
+    top:0px;
+    left:0px;
+    background-color: rgba(255,255,255,.7);
+    width:100%;
+    height:100%;
+    transition: all .7s ease-in-out;
+    padding: 20px;
+    box-sizing: border-box;
+    clip-path: circle(0% at 100% 100%);
+}
+.qcard:hover .descriptions{
+    left:0px;
+    transition: all .7s ease-in-out;
+    clip-path: circle(75%);
+}
+.qcard:hover{
+    transition: all .5s cubic-bezier(.8,.5,.2,1.4);
+    box-shadow: 0px 2px 3px rgba(0,0,0,.3);
+    transform: scale(.97);
+}
+.qcard:hover img{
+    transition: all .5s cubic-bezier(.8,.5,.2,1.4);
+    transform: scale(1.6) rotate(20deg);
+    filter: blur(3px);
+}
+.qcard h1{
+    color: #ff3838;
+    letter-spacing: 1px;
+    margin: 0px;
+}
+.qcard p{
+    line-height: 24px;
+    height: 70%;
+}
+.qcard button{
+    width: fit-content;
+    height: 40px;
+    cursor: pointer;
+    border-style: none;
+    background-color: #ff3838;
+    color:#fff;
+    font-size: 15px;
+    outline: none;
+    box-shadow: 0px 2px 3px rgba(0,0,0,.4);
+    transition: all .5s ease-in-out;
+}
+.qcard button:hover{
+    transform: scale(.95) translateX(-5px);
+    transition: all .5s ease-in-out;
+}
 </style>
 
    <!-- Optional JavaScript -->

@@ -5,7 +5,7 @@
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
     <!--google icons-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!--font awesome-->
@@ -122,54 +122,7 @@
         <a class="nav-link" style="color: #000000" href="/contactus"><div class="hello"><span class="material-icons">phonelink_ring</span>CONTACT US</div></a>
       </li>
     
-      <!--{% if request.user.is_superuser %}
-          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-         <li class="nav-item">
-          <a class="nav-link" href="/upload"><span class="material-icons">question_answer</span>BYTES UPLOAD</a>
-          </li>
-          <li class="nav-item">
-          <a class="nav-link" href="/uploadevents"><span class="material-icons">question_answer</span>EVENTS UPLOAD</a>
-          </li>
-          <li class="nav-item">
-          <a class="nav-link" href="/uploadproject"><span class="material-icons">question_answer</span>PROJECT UPLOAD</a>
-          </li>
-          <li class="nav-item">
-          <a class="nav-link" href="/addachievements"><span class="material-icons">question_answer</span>ACHIEVEMENTS UPLOAD</a>
-          </li>
-          <li class="nav-item">
-          <a class="nav-link" href="/reportnews"><span class="material-icons">question_answer</span>ADD NEWS</a>
-          </li>-->
-           <!--
-       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  ADMIN UPLOADS
-</button>
-
-
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">UPLOADS</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-         <a class="nav-link" href="/upload"><span class="material-icons">question_answer</span>BYTES UPLOAD</a>
-         <a class="nav-link" href="/uploadevents"><span class="material-icons">question_answer</span>EVENTS UPLOAD</a>
-         <a class="nav-link" href="/uploadproject"><span class="material-icons">question_answer</span>PROJECT UPLOAD</a>
-         <a class="nav-link" href="/reportnews"><span class="material-icons">question_answer</span>ADD NEWS</a>
-         <a class="nav-link" href="/addachievements"><span class="material-icons">question_answer</span>ACHIEVEMENTS UPLOAD</a
-      ></div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-      {% else %}
-      {% endif %}-->
+     
     </ul>
     <span class="navbar-text">
      <!--text here-->
@@ -181,7 +134,7 @@
  <style type="text/css">
    body 
    {  
-    /*background-image: url('{% static 'images/news1.jpg'%}'); background-size:cover;*/
+    
   background-image: url('{% static "images/news1.jpg"%}');background-repeat: no-repeat;background-attachment: fixed;background-size: cover;>
    }
    .grid-container
@@ -208,10 +161,15 @@
 }
 @media(max-width:767.98px)
 {
+    body 
+   {  
+    width:300px;
+  background-image: url('{% static "images/news1.jpg"%}');background-repeat: no-repeat;>
+   }
 .grid-container
    {
     width:300px;
-    grid-template-columns: auto;
+    grid-template-columns: auto auto auto;
     justify-content: space-evenly;
     grid-row-gap: 40px;
     grid-column-gap:5%;
@@ -232,32 +190,13 @@
      padding-right:80px;
 
    }
-   .btnm
-   {
-    width:100%;
-   }
+  
 }
 
 
-   .car{
-    float: left;
-    width: 33.33%;
-    padding: 1px;
-    background-color:#FF0000;
-   } 
-   .bike {
-    float: left;
-    width: 33.33%;
-    padding: 5px;
-  }
-  .btnm{
-    width:305px;
-    height:30px;
-     background: #FFFFFF;
-     color:blue;
-    margin-right:180px;
-    margin-left:0%;
-  }
+
+
+  
   
   .font
   {
@@ -272,7 +211,6 @@
     justify-content: space-evenly;
     grid-row-gap: 40px;
     grid-column-gap:5%;
-    padding-left: 120px;
     margin-bottom:20px;
     margin-left:7%;
    }*/
@@ -285,8 +223,7 @@
     grid-column-gap:5%;
     padding-left: 0%;
     margin-bottom:20px;
-    margin-left:15%;
-    margin-right:10%;
+   
    }
    .im{
      width:300px;
@@ -299,104 +236,13 @@
      font-size:50%;
      color:#FFFFFF;
     }
-    .btnm{
-    width:280px;
-    height:30px;
-     background: #FFFFFF;
-     color:blue;
-    margin-right:140px;
-    margin-left:4%;
-  }
+ 
    }
-   @media (max-width: 991.98px)
-   {
-    /*{
-    width:300px;
-    grid-template-columns: auto;
-    justify-content: space-evenly;
-    grid-row-gap: 40px;
-    grid-column-gap:5%;
-    padding-left: 120px;
-    margin-bottom:20px;
-    margin-left:7%;
-   }*/
-   .grid-container
-   {
-    width:300px;
-    grid-template-columns: auto;
-    justify-content: space-evenly;
-    grid-row-gap: 40px;
-    grid-column-gap:5%;
-    padding-left: 0%;
-    margin-bottom:20px;
-    margin-left:15%;
-    margin-right:10%;
-   }
-   .im{
-     width:300px;
-     height:300px;
-     padding-left:0px;
-     transition: transform .2s;
-   }
-    .font
-    {
-     font-size:40%;
-     color:#FFFFFF;
-    }
-    .btnm{
-    width:280px;
-    height:30px;
-     background: #FFFFFF;
-     color:blue;
-    margin-right:140px;
-    margin-left:4%;
-  }
-   }
-   @media (max-width: 1199.98px)
-   {
-    /*
-    {
-    width:300px;
-    grid-template-columns: auto;
-    justify-content: space-evenly;
-    grid-row-gap: 40px;
-    grid-column-gap:5%;
-    padding-left: 120px;
-    margin-bottom:20px;
-    margin-left:7%;
-   }*/
-   .grid-container
-   {
-    width:300px;
-    grid-template-columns: auto;
-    justify-content: space-evenly;
-    grid-row-gap: 40px;
-    grid-column-gap:5%;
-    padding-left: 0%;
-    margin-bottom:20px;
-    margin-left:15%;
-    margin-right:10%;
-   }
-   .im{
-     width:300px;
-     height:300px;
-     padding-left:0px;
-     transition: transform .2s;
-   }
-    .font
-    {
-     font-size:130%;
-     color:#FFFFFF;
-    }
-    .btnm{
-    width:280px;
-    height:30px;
-     background: #FFFFFF;
-     color:blue;
-    margin-right:10%;
-    margin-left:4%;
-  }
-   }
+   
+
+   #navbarText{
+font-size:16px;
+}
 </style>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>

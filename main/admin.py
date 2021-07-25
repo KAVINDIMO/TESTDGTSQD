@@ -6,7 +6,9 @@ from .models import UserProfile
 from .models import project
 from .models import achievements
 from .models import report
-# Register your models here.
+from .models import Task
+
+admin.site.register(Task)
 admin.site.register(review)
 admin.site.register(news)
 admin.site.register(event)

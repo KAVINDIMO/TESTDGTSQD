@@ -45,7 +45,7 @@ class project(models.Model):
 class UserProfile(models.Model):
    user = models.OneToOneField(User,on_delete=models.CASCADE)
    phone = models.CharField(max_length=256, blank=True, null=True)
-   img = models.ImageField(upload_to='images', default='static/images/14358.jpg')
+   img = models.ImageField(upload_to='images', default='images/dlogo.jpeg')
    about = models.CharField(max_length=50000, default='timezone.now')
    idcard=models.CharField(max_length=10,default='100')
    
@@ -57,3 +57,12 @@ def create_profile(sender,**kwargs):
 		user_profile = UserProfile.objects.create(user=kwargs['instance'])
 
 post_save.connect(create_profile,sender=User)
+
+
+class Task(models.Model):
+  Title = models.CharField(max_length=200)
+  description = models.TextField(max_length=200,default="desp")
+  img = models.ImageField(upload_to='images', default='images/dlogo.jpeg')
+      
+  def __str__(self):
+    return self.Title
